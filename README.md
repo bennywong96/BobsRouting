@@ -40,6 +40,6 @@ WADL : http://localhost:9000/employeeservice?_wadl
 ##### Camel Route and Processor
 Navigate to here in a web browser: http://localhost:9000/employeeservice/employees/bob
 
-The [Processor](src/main/java/org/bob/cxfrs/beans/EmployeeServiceProcessor.java) 
+The [Processor](src/main/java/org/bob/cxfrs/beans/UserProcessor.java) 
 prefixes the path param `bob` with `Hello world`
 

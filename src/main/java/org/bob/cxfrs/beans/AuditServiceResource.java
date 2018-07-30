@@ -1,21 +1,22 @@
 package org.bob.cxfrs.beans;
 
-import javax.print.attribute.standard.Media;
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
 @Path("/")
-public class EmployeeServiceResource {
+public class AuditServiceResource {
 
     @Context
     private UriInfo uriInfo;
 
-	public EmployeeServiceResource() { }
+	public AuditServiceResource() { }
 
 	@POST
-	@Path("/boo")
+	@Path("/")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String getCustomer(String body) {
 		return null;
