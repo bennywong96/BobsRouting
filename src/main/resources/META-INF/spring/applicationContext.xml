@@ -15,6 +15,14 @@
 				  serviceClass="org.bob.cxfrs.beans.AuditServiceResource">
 	</cxf:rsServer>
 
+    <cxf:rsServer id="databaseService" address="http://localhost:9000/database"
+                  serviceClass="org.bob.cxfrs.beans.DataBaseServiceResource">
+    </cxf:rsServer>
+
+    <cxf:rsServer id="emailService" address="http://localhost:9000/email"
+                  serviceClass="org.bob.cxfrs.beans.EMailServiceResource">
+    </cxf:rsServer>
+
 
 	<bean id="myDataSource" name="myDataSource"
 		  class="org.apache.commons.dbcp.BasicDataSource"  >
@@ -33,11 +41,18 @@
 	</bean>
 	<bean id="auditRoute" class="org.bob.cxfrs.beans.AuditServiceRouteBuilder">
 	</bean>
-
+    <bean id="databaseRoute" class="org.bob.cxfrs.beans.DataBaseServiceRouteBuilder">
+    </bean>
+    <bean id="emailRoute" class="org.bob.cxfrs.beans.EMailServiceRouteBuilder">
+    </bean>
 
 	<camelContext id="camelId" xmlns="http://camel.apache.org/schema/spring">
-		<routeBuilder ref="myRoute" />
+
+        <routeBuilder ref="myRoute" />
 		<routeBuilder ref="auditRoute"/>
+        <routeBuilder ref="databaseRoute"/>
+        <routeBuilder ref="emailRoute"/>
+
 	</camelContext>
 
 </beans>

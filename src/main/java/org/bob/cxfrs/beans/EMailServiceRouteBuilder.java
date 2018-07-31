@@ -1,17 +1,13 @@
 package org.bob.cxfrs.beans;
 
-import org.apache.camel.Exchange;
-import org.apache.camel.Expression;
 import org.apache.camel.builder.RouteBuilder;
-import org.bob.cxfrs.beans.constants.Constants;
 
 
-public class EmployeeServiceRouteBuilder extends RouteBuilder {
-
+public class EMailServiceRouteBuilder extends RouteBuilder {
 
 
     public void configure() throws Exception {
-        from("cxfrs://bean://restService")
+        from("cxfrs://bean://databaseService")
                 .process(new UserProcessor())
                 .process(new EMailProcessor())
                 .log("${body}")
