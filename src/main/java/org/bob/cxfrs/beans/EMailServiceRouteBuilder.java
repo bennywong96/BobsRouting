@@ -7,7 +7,7 @@ public class EMailServiceRouteBuilder extends RouteBuilder {
 
 
     public void configure() throws Exception {
-        from("cxfrs://bean://databaseService")
+        from("cxfrs://bean://emailService")
                 .process(new UserProcessor())
                 .process(new EMailProcessor())
                 .log("${body}")
